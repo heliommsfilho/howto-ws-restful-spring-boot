@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.github.heliomfdev.restful_ws.PaisRepositoryTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.669 sec <<< FAILURE! - in com.github.heliomfdev.restful_ws.PaisRepositoryTests
+findByNomeContainingShouldReturnBrazil(com.github.heliomfdev.restful_ws.PaisRepositoryTests)  Time elapsed: 0.037 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.github.heliomfdev.restful_ws.PaisRepositoryTests.findByNomeContainingShouldReturnBrazil(PaisRepositoryTests.java:27)
+
