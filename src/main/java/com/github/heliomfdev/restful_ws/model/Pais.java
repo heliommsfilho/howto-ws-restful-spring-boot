@@ -18,6 +18,8 @@ public class Pais implements Serializable {
 
     private String sigla;
 
+    private Integer quantidadeEstados;
+
     @OneToMany(mappedBy = "pais", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Estado> estados;
 
@@ -47,6 +49,10 @@ public class Pais implements Serializable {
 
     public void setEstados(List<Estado> estados) {
         this.estados = estados;
+    }
+
+    public void getQuantidadeEstados() {
+        this.quantidadeEstados = this.estados.size();
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.github.heliomfdev.restful_ws.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +24,8 @@ public class Estado implements Serializable {
     private List<Cidade> cidades;
 
     @ManyToOne
+    @JoinColumn(name = "pais")
+    @JsonIgnore
     private Pais pais;
 
     public Long getId() {
