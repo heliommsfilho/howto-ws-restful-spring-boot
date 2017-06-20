@@ -60,6 +60,7 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.4.RELEASE" />
           <element id="library" level="project" name="Maven: com.h2database:h2:1.4.195" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:1.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

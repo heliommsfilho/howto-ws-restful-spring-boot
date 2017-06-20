@@ -19,7 +19,7 @@
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR CIDADES_BRASIL.SYSTEM_SEQUENCE_8CCFB6B6_7DC3_4FB6_B3EB_41FFEDB43D90)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR CIDADES_BRASIL.SYSTEM_SEQUENCE_F61EB1B7_3397_44D2_963B_395EA375B7AB)</DefaultExpression>
     </column>
     <column id="10" parent="6" name="NOME">
       <Position>2</Position>
@@ -49,7 +49,7 @@
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR CIDADES_BRASIL.SYSTEM_SEQUENCE_3A41D7B8_0D44_452B_B8D6_E06AD1610953)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR CIDADES_BRASIL.SYSTEM_SEQUENCE_7083FD4A_7F92_4437_9393_BD40587D89E4)</DefaultExpression>
     </column>
     <column id="15" parent="7" name="NOME">
       <Position>2</Position>
@@ -84,7 +84,7 @@
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR CIDADES_BRASIL.SYSTEM_SEQUENCE_AF1E7822_15ED_4EE5_B990_E98C08F7050A)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR CIDADES_BRASIL.SYSTEM_SEQUENCE_3321E480_2F6C_4A74_8A59_D34C0C231EB3)</DefaultExpression>
     </column>
     <column id="21" parent="8" name="NOME">
       <Position>2</Position>
