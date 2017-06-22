@@ -1,4 +1,4 @@
-package com.github.heliomfdev.restful_ws.dto;
+package com.github.heliomfdev.restful_ws.dto.mapper;
 
 import org.modelmapper.ModelMapper;
 

@@ -1,7 +1,0 @@
-com\github\heliomfdev\restful_ws\model\Pais.class
-com\github\heliomfdev\restful_ws\model\Cidade.class
-com\github\heliomfdev\restful_ws\SpringBootRestfulWebServiceApplication.class
-com\github\heliomfdev\restful_ws\repository\CidadeRepository.class
-com\github\heliomfdev\restful_ws\model\Estado.class
-com\github\heliomfdev\restful_ws\repository\EstadoRepository.class
-com\github\heliomfdev\restful_ws\repository\PaisRepository.class

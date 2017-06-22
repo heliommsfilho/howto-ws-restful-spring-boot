@@ -20,7 +20,7 @@ public class Pais implements Serializable {
 
     private Integer quantidadeEstados;
 
-    @OneToMany(mappedBy = "pais", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pais", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Estado> estados;
 
     public Long getId() {
@@ -51,8 +51,8 @@ public class Pais implements Serializable {
         this.estados = estados;
     }
 
-    public void getQuantidadeEstados() {
-        this.quantidadeEstados = this.estados.size();
+    public Integer getQuantidadeEstados() {
+        return this.estados.size();
     }
 
     @Override

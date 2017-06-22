@@ -2,31 +2,31 @@ package com.github.heliomfdev.restful_ws.dto;
 
 public class PaisDto {
 
-    private String paisNome;
-    private String paisSigla;
-    private String paisQuantidadeEstados;
+    private String nome;
+    private String sigla;
+    private Integer quantidadeEstados;
 
-    public String getPaisNome() {
-        return paisNome;
+    public String getNome() {
+        return nome;
     }
 
-    public void setPaisNome(String paisNome) {
-        this.paisNome = paisNome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getPaisSigla() {
-        return paisSigla;
+    public String getSigla() {
+        return sigla;
     }
 
-    public void setPaisSigla(String paisSigla) {
-        this.paisSigla = paisSigla;
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
     }
 
-    public String getPaisQuantidadeEstados() {
-        return paisQuantidadeEstados;
+    public Integer getQuantidadeEstados() {
+        return quantidadeEstados;
     }
 
-    public void setPaisQuantidadeEstados(String paisQuantidadeEstados) {
-        this.paisQuantidadeEstados = paisQuantidadeEstados;
+    public void setQuantidadeEstados(Integer quantidadeEstados) {
+        this.quantidadeEstados = quantidadeEstados;
     }
 }
