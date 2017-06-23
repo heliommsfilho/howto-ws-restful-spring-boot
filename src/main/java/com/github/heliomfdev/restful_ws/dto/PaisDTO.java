@@ -1,6 +1,6 @@
 package com.github.heliomfdev.restful_ws.dto;
 
-public class PaisDto {
+public class PaisDTO {
 
     private String nome;
     private String sigla;

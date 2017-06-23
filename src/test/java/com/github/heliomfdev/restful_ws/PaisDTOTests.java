@@ -1,6 +1,6 @@
 package com.github.heliomfdev.restful_ws;
 
-import com.github.heliomfdev.restful_ws.dto.PaisDto;
+import com.github.heliomfdev.restful_ws.dto.PaisDTO;
 import com.github.heliomfdev.restful_ws.model.Pais;
 import com.github.heliomfdev.restful_ws.repository.PaisRepository;
 import org.junit.Assert;
@@ -14,10 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PaisDtoTests {
+public class PaisDTOTests {
 
     Pais pais;
-    PaisDto paisDto;
+    PaisDTO paisDTO;
     ModelMapper mapper;
 
     @Autowired
@@ -31,12 +31,12 @@ public class PaisDtoTests {
     @Test
     public void dtoDataMachesWithCorrespondingModelData() {
         pais = repository.findBySigla("BR");
-        paisDto = mapper.map(pais, PaisDto.class);
+        paisDTO = mapper.map(pais, PaisDTO.class);
 
         Assert.assertNotNull(pais);
-        Assert.assertNotNull(paisDto);
-        Assert.assertEquals(pais.getNome(), paisDto.getNome());
-        Assert.assertEquals(pais.getSigla(), paisDto.getSigla());
-        Assert.assertEquals(pais.getQuantidadeEstados(), paisDto.getQuantidadeEstados());
+        Assert.assertNotNull(paisDTO);
+        Assert.assertEquals(pais.getNome(), paisDTO.getNome());
+        Assert.assertEquals(pais.getSigla(), paisDTO.getSigla());
+        Assert.assertEquals(pais.getQuantidadeEstados(), paisDTO.getQuantidadeEstados());
     }
 }

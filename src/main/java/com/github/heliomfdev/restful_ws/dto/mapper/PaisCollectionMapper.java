@@ -1,16 +1,12 @@
 package com.github.heliomfdev.restful_ws.dto.mapper;
 
+import com.github.heliomfdev.restful_ws.dto.PaisDTO;
+import com.github.heliomfdev.restful_ws.model.Pais;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaisCollectionMapper extends CollectionMapping {
+public class PaisCollectionMapper<S, D> {
 
-    public PaisCollectionMapper() {
-        super(new ArrayList<Pais>());
-    }
 
-    @Override
-    List mapCollection(List inputCollection) {
-        return null;
-    }
 }
