@@ -18,7 +18,7 @@ public class Pais implements Serializable {
 
     private String sigla;
 
-    private Integer quantidadeEstados;
+//    private Integer quantidadeEstados;
 
     @OneToMany(mappedBy = "pais", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Estado> estados;

@@ -4,7 +4,7 @@ public class PaisDTO {
 
     private String nome;
     private String sigla;
-    private Integer quantidadeEstados;
+    private int quantidadeEstados;
 
     public String getNome() {
         return nome;

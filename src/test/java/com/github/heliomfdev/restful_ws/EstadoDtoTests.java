@@ -31,7 +31,6 @@ public class EstadoDtoTests {
     @Before
     public void setUp() throws Exception {
         mapper = new ModelMapper();
-        mapper.addConverter(new PaisCollectionConverter());
         estado = estadoRepository.findBySigla("BA");
         estadoDto = mapper.map(estado, EstadoDto.class);
         estados = estadoRepository.findAll();
