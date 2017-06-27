@@ -2,6 +2,7 @@ package com.github.heliomfdev.restful_ws;
 
 import com.github.heliomfdev.restful_ws.dto.PaisDTO;
 import com.github.heliomfdev.restful_ws.dto.mapper.CollectionMapper;
+import com.github.heliomfdev.restful_ws.dto.mapper.Mapper;
 import com.github.heliomfdev.restful_ws.model.Pais;
 import com.github.heliomfdev.restful_ws.repository.PaisRepository;
 import org.junit.Assert;
@@ -13,27 +14,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
+import javax.transaction.Transactional;
 import java.util.Iterator;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class PaisDTOTests {
 
-    ModelMapper mapper;
+    private ModelMapper mapper;
 
     @Autowired
-    PaisRepository repository;
+    private PaisRepository paisRepository;
 
     @Before
     public void setUp() throws Exception {
-       mapper = new ModelMapper();
+       mapper = Mapper.getInstance();
     }
 
     @Test
-    public void dtoDataMachesWithCorrespondingModelData() {
-        Pais pais = repository.findBySigla("BR");
+    public void dtoDataMatchesWithCorrespondingModelData() {
+        Pais pais = paisRepository.findBySigla("BR");
+
+        /* Test with a single object. */
         PaisDTO paisDTO = mapper.map(pais, PaisDTO.class);
 
         Assert.assertNotNull(pais);
@@ -45,7 +49,8 @@ public class PaisDTOTests {
         Assert.assertEquals(pais.getSigla(), paisDTO.getSigla());
         Assert.assertEquals(pais.getQuantidadeEstados(), paisDTO.getQuantidadeEstados());
 
-        List<Pais> listPais = repository.findAll();
+        /* Test with a collection */
+        List<Pais> listPais = paisRepository.findAll();
 
         CollectionMapper<Pais, PaisDTO> collectionMapper = new CollectionMapper<>();
         List<PaisDTO> listPaisDTO = collectionMapper.map(listPais, PaisDTO.class);
