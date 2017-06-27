@@ -9,7 +9,7 @@ public interface EstadoRepository extends JpaRepository<Estado, Long> {
 
     Estado findBySigla(String sigla);
 
-    List<Estado> findByNomeContaining(String sigla);
+    List<Estado> findByNomeContaining(String nome);
 
     List<Estado> findByPais_Sigla(String siglaPais);
 }
