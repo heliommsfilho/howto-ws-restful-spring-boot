@@ -13,7 +13,7 @@ import java.util.List;
  *
  * Receives a list of objects and map to a DTO object.
  * */
-public class CollectionMapper<S, D> {
+public class ListMapper<S, D> {
 
     public List<D> map(List<S> sourceList, Class<D> destinationType) {
         ModelMapper mapper = Mapper.getInstance();
