@@ -1,7 +1,7 @@
 package com.github.heliomfdev.restful_ws;
 
 import com.github.heliomfdev.restful_ws.dto.CidadeDTO;
-import com.github.heliomfdev.restful_ws.dto.mapper.CollectionMapper;
+import com.github.heliomfdev.restful_ws.dto.mapper.ListMapper;
 import com.github.heliomfdev.restful_ws.dto.mapper.Mapper;
 import com.github.heliomfdev.restful_ws.model.Cidade;
 import com.github.heliomfdev.restful_ws.repository.CidadeRepository;
@@ -37,11 +37,11 @@ public class CidadeDTOTests {
     public void dtoDataMatchesWithCorrespondingModelData() {
         final int QUANTIDADE_CIDADES_SAO_PAULO = 645;
 
-        CollectionMapper<Cidade, CidadeDTO> collectionMapper = new CollectionMapper<>();
+        ListMapper<Cidade, CidadeDTO> listMapper = new ListMapper<>();
 
         /* Test findByNomeContaining() */
         List<Cidade> listCidades = cidadeRepository.findByNomeContaining("são");
-        List<CidadeDTO> listCidadesDTO = collectionMapper.map(listCidades, CidadeDTO.class);
+        List<CidadeDTO> listCidadesDTO = listMapper.map(listCidades, CidadeDTO.class);
 
         Iterator<Cidade> iteratorListCidades = listCidades.iterator();
         Iterator<CidadeDTO> iteratorListCidadesDTO = listCidadesDTO.iterator();
@@ -65,7 +65,7 @@ public class CidadeDTOTests {
 
         /* Test findByEstado_Sigla(). */
         listCidades = cidadeRepository.findByEstado_Sigla("SP");
-        listCidadesDTO = collectionMapper.map(listCidades, CidadeDTO.class);
+        listCidadesDTO = listMapper.map(listCidades, CidadeDTO.class);
 
         iteratorListCidades = listCidades.iterator();
         iteratorListCidadesDTO = listCidadesDTO.iterator();

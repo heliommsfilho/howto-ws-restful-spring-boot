@@ -1,7 +1,7 @@
 package com.github.heliomfdev.restful_ws;
 
 import com.github.heliomfdev.restful_ws.dto.EstadoDTO;
-import com.github.heliomfdev.restful_ws.dto.mapper.CollectionMapper;
+import com.github.heliomfdev.restful_ws.dto.mapper.ListMapper;
 import com.github.heliomfdev.restful_ws.dto.mapper.Mapper;
 import com.github.heliomfdev.restful_ws.model.Estado;
 import com.github.heliomfdev.restful_ws.repository.EstadoRepository;
@@ -26,7 +26,7 @@ public class EstadoDTOTests {
     private ModelMapper mapper;
 
     @Autowired
-    EstadoRepository estadoRepository;
+    private EstadoRepository estadoRepository;
 
     @Before
     public void setUp() throws Exception {
@@ -58,10 +58,10 @@ public class EstadoDTOTests {
         Assert.assertEquals(estado.getQuantidadeCidades(), QUANTIDADE_CIDADES_BAHIA);
 
         /* Test findByNomeContaining(). */
-        CollectionMapper<Estado, EstadoDTO> collectionMapper = new CollectionMapper<>();
+        ListMapper<Estado, EstadoDTO> listMapper = new ListMapper<>();
 
         List<Estado> listEstados = estadoRepository.findByNomeContaining("Grande");
-        List<EstadoDTO> listEstadosDTO = collectionMapper.map(listEstados, EstadoDTO.class);
+        List<EstadoDTO> listEstadosDTO = listMapper.map(listEstados, EstadoDTO.class);
         Iterator<Estado> iteratorListEstados = listEstados.iterator();
         Iterator<EstadoDTO> iteratorListEstadosDTO = listEstadosDTO.iterator();
 
@@ -88,7 +88,7 @@ public class EstadoDTOTests {
 
         /* Test findByPais_Sigla(). */
         listEstados = estadoRepository.findByPais_Sigla("BR");
-        listEstadosDTO = collectionMapper.map(listEstados, EstadoDTO.class);
+        listEstadosDTO = listMapper.map(listEstados, EstadoDTO.class);
         iteratorListEstados = listEstados.iterator();
         iteratorListEstadosDTO = listEstadosDTO.iterator();
 

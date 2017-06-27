@@ -1,7 +1,7 @@
 package com.github.heliomfdev.restful_ws;
 
 import com.github.heliomfdev.restful_ws.dto.PaisDTO;
-import com.github.heliomfdev.restful_ws.dto.mapper.CollectionMapper;
+import com.github.heliomfdev.restful_ws.dto.mapper.ListMapper;
 import com.github.heliomfdev.restful_ws.dto.mapper.Mapper;
 import com.github.heliomfdev.restful_ws.model.Pais;
 import com.github.heliomfdev.restful_ws.repository.PaisRepository;
@@ -52,8 +52,8 @@ public class PaisDTOTests {
         /* Test with a collection */
         List<Pais> listPais = paisRepository.findAll();
 
-        CollectionMapper<Pais, PaisDTO> collectionMapper = new CollectionMapper<>();
-        List<PaisDTO> listPaisDTO = collectionMapper.map(listPais, PaisDTO.class);
+        ListMapper<Pais, PaisDTO> listMapper = new ListMapper<>();
+        List<PaisDTO> listPaisDTO = listMapper.map(listPais, PaisDTO.class);
         Iterator<Pais> listPaisIterator = listPais.iterator();
         Iterator<PaisDTO> listDTOIterator = listPaisDTO.iterator();
 
