@@ -18,7 +18,6 @@ public class Cidade implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "estado")
-    @JsonIgnore
     private Estado estado;
 
     public Long getId() {

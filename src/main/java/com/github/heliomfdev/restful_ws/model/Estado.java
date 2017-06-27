@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 public class Estado implements Serializable {
 
-    private static final long serialVersionUID = 8997902210519016053L;
+    private static final long serialVersionUID = 2282038916464924631L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,6 @@ public class Estado implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "pais")
-    @JsonIgnore
     private Pais pais;
 
     public Long getId() {
@@ -62,6 +61,10 @@ public class Estado implements Serializable {
 
     public void setPais(Pais pais) {
         this.pais = pais;
+    }
+
+    public Integer getQuantidadeCidades() {
+        return this.cidades.size();
     }
 
     @Override

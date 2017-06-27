@@ -1,6 +1,8 @@
 package com.github.heliomfdev.restful_ws.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
 @Entity
 public class Pais implements Serializable {
 
-    private static final long serialVersionUID = 450736027805253438L;
+    private static final long serialVersionUID = 6036414602334726140L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +20,7 @@ public class Pais implements Serializable {
 
     private String sigla;
 
-//    private Integer quantidadeEstados;
-
-    @OneToMany(mappedBy = "pais", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pais", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Estado> estados;
 
     public Long getId() {
