@@ -1,6 +1,6 @@
 package com.github.heliomfdev.restful_ws.dto;
 
-public class CidadeDto {
+public class CidadeDTO {
 
     private String nomePais;
     private String nomeEstado;

@@ -1,10 +1,15 @@
 package com.github.heliomfdev.restful_ws.dto;
 
-public class EstadoDto {
+import java.io.Serializable;
+
+public class EstadoDTO implements Serializable {
+
+    private static final long serialVersionUID = 8645121583750134482L;
 
     private String nomePais;
     private String nome;
     private String sigla;
+    private Integer quantidadeCidades;
 
     public String getNomePais() {
         return nomePais;
@@ -28,5 +33,13 @@ public class EstadoDto {
 
     public void setSigla(String sigla) {
         this.sigla = sigla;
+    }
+
+    public Integer getQuantidadeCidades() {
+        return quantidadeCidades;
+    }
+
+    public void setQuantidadeCidades(Integer quantidadeCidades) {
+        this.quantidadeCidades = quantidadeCidades;
     }
 }

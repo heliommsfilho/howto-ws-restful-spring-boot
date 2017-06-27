@@ -1,6 +1,10 @@
 package com.github.heliomfdev.restful_ws.dto;
 
-public class PaisDTO {
+import java.io.Serializable;
+
+public class PaisDTO implements Serializable {
+
+    private static final long serialVersionUID = -6836083760892112332L;
 
     private String nome;
     private String sigla;

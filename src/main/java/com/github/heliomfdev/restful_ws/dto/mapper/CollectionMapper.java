@@ -1,6 +1,7 @@
 package com.github.heliomfdev.restful_ws.dto.mapper;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,8 @@ import java.util.List;
  * @version 1.0
  * @since 1.0
  *
- * Receives a generic raw list and returns a DTO object from its type.
+ * Receives a list of objects and map to a DTO object.
  * */
-// TODO: Executar testes no JUnit
 public class CollectionMapper<S, D> {
 
     public List<D> map(List<S> sourceList, Class<D> destinationType) {
