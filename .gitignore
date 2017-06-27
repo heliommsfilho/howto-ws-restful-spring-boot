@@ -22,4 +22,6 @@
 hs_err_pid*
 
 .idea/workspace.xml
+.idea/dataSources.xml
+.idea/dataSources/
 target/
