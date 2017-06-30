@@ -1,7 +1,10 @@
 package com.github.heliomfdev.restful_ws.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.io.Serializable;
 
+@JsonSerialize
 public class CidadeDTO implements Serializable{
 
     private String nomePais;
