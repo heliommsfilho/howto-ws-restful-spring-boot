@@ -7,26 +7,24 @@ import org.modelmapper.PropertyMap;
 
 public class Mapper {
 
+
     private Mapper() {
-        /* Singleton should not be instantiated */
+        /* Should not be instantiated */
     }
 
-    private static ModelMapper modelMapper;
+    @SuppressWarnings("unchecked")
+    public static <S, D> D map(S source, Class<D> destinationType) {
 
-    public static ModelMapper getInstance() {
+        ModelMapper modelMapper = new ModelMapper();
 
-        if (modelMapper == null) {
-            modelMapper = new ModelMapper();
+        /* Explicit mapping for Cidade */
+        modelMapper.addMappings(new PropertyMap<Cidade, CidadeDTO>() {
+            @Override
+            protected void configure() {
+                String nomePais = source.getEstado().getPais().getNome();
+                map().setNomePais(nomePais);
+            }});
 
-            /* Explicit mapping for Cidade */
-            modelMapper.addMappings(new PropertyMap<Cidade, CidadeDTO>() {
-                @Override
-                protected void configure() {
-                    String nomePais = source.getEstado().getPais().getNome();
-                    map().setNomePais(nomePais);
-                }});
-        }
-
-        return modelMapper;
+        return source != null ? modelMapper.map(source, destinationType) : null;
     }
 }

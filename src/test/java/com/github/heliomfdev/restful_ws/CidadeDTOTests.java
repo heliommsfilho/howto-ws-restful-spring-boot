@@ -23,15 +23,8 @@ import java.util.List;
 @Transactional
 public class CidadeDTOTests {
 
-    private ModelMapper mapper;
-
     @Autowired
     private CidadeRepository cidadeRepository;
-
-    @Before
-    public void setUp() throws Exception {
-        mapper = Mapper.getInstance();
-    }
 
     @Test
     public void dtoDataMatchesWithCorrespondingModelData() {

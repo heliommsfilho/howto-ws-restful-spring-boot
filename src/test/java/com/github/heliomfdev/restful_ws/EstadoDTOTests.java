@@ -23,15 +23,8 @@ import java.util.List;
 @Transactional
 public class EstadoDTOTests {
 
-    private ModelMapper mapper;
-
     @Autowired
     private EstadoRepository estadoRepository;
-
-    @Before
-    public void setUp() throws Exception {
-        mapper = Mapper.getInstance();
-    }
 
     @Test
     public void dtoDataMatchesWithCorrespondingModelData() {
@@ -42,7 +35,7 @@ public class EstadoDTOTests {
         Estado estado = estadoRepository.findBySigla("BA");
 
         /* Test findBySigla(). */
-        EstadoDTO estadoDTO = mapper.map(estado, EstadoDTO.class);
+        EstadoDTO estadoDTO = Mapper.map(estado, EstadoDTO.class);
 
         Assert.assertNotNull(estado);
         Assert.assertNotNull(estadoDTO);

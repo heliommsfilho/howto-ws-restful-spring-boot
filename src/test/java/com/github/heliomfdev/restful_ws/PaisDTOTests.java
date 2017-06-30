@@ -23,22 +23,15 @@ import java.util.List;
 @Transactional
 public class PaisDTOTests {
 
-    private ModelMapper mapper;
-
     @Autowired
     private PaisRepository paisRepository;
-
-    @Before
-    public void setUp() throws Exception {
-       mapper = Mapper.getInstance();
-    }
 
     @Test
     public void dtoDataMatchesWithCorrespondingModelData() {
         Pais pais = paisRepository.findBySigla("BR");
 
         /* Test with a single object. */
-        PaisDTO paisDTO = mapper.map(pais, PaisDTO.class);
+        PaisDTO paisDTO = Mapper.map(pais, PaisDTO.class);
 
         Assert.assertNotNull(pais);
         Assert.assertNotNull(paisDTO);

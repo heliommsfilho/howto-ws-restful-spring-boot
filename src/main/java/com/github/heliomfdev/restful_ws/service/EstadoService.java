@@ -15,8 +15,8 @@ public class EstadoService extends GenericService<Estado, EstadoDTO> {
     @Autowired
     private EstadoRepository repository;
 
-    public EstadoDTO obterPorSiglaEstado(String siglaEstado) {
-        return Mapper.getInstance().map(repository.findBySigla(siglaEstado.trim()), EstadoDTO.class);
+    public EstadoDTO obterPorSigla(String siglaEstado) {
+        return Mapper.map(repository.findBySigla(siglaEstado.trim()), EstadoDTO.class);
     }
 
     public List<EstadoDTO> obterPorSiglaPais(String siglaPais) {
@@ -25,5 +25,9 @@ public class EstadoService extends GenericService<Estado, EstadoDTO> {
 
     public List<EstadoDTO> obterPorNome(String nome) {
         return super.listMapper.map(repository.findByNomeContaining(nome.trim()), EstadoDTO.class);
+    }
+
+    public List<EstadoDTO> obterTodos() {
+        return super.listMapper.map(repository.findAll(), EstadoDTO.class);
     }
 }

@@ -1,6 +1,8 @@
 package com.github.heliomfdev.restful_ws.dto;
 
-public class CidadeDTO {
+import java.io.Serializable;
+
+public class CidadeDTO implements Serializable{
 
     private String nomePais;
     private String nomeEstado;
