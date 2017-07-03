@@ -3,7 +3,7 @@ package com.github.heliomfdev.restful_ws.dto.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**m
+/**
  * @author Hélio Márcio Filho
  * @version 1.0
  * @since 1.0

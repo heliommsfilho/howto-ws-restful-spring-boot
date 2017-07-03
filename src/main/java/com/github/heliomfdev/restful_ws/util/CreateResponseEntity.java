@@ -19,7 +19,7 @@ public class CreateResponseEntity {
         if (responseObject != null) {
             responseEntity = new ResponseEntity<>(responseObject, headers, HttpStatus.OK);
         } else {
-            responseEntity = new ResponseEntity<>((T)new EmptyDTO(), headers, HttpStatus.OK);
+            responseEntity = new ResponseEntity<>((T) new EmptyDTO(), headers, HttpStatus.OK);
         }
 
         return responseEntity;

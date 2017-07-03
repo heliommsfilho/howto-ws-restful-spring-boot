@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="cidades_brasil" uuid="7bc94a18-01c6-4b12-946d-96e0100c70f2">
-      <database-info product="H2" version="1.4.192 (2016-05-26)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.192 (2016-05-26)">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>SYSDBA</user-name>
+    <data-source name="cidades_brasil" uuid="b3bdda9a-35b5-424d-8bd6-c43318477902">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <introspection-schemas>CIDADES_BRASIL:CIDADES_BRASIL</introspection-schemas>
     </data-source>
   </component>

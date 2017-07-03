@@ -21,4 +21,8 @@ public class CidadeService extends GenericService<Cidade, CidadeDTO> {
     public List<CidadeDTO> obterPorNome(String nome) {
         return super.listMapper.map(repository.findByNomeContaining(nome.trim()), CidadeDTO.class);
     }
+
+    public List<CidadeDTO> obterTodasCidades() {
+        return super.listMapper.map(repository.findAll(), CidadeDTO.class);
+    }
 }

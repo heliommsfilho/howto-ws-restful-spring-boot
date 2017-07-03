@@ -9,7 +9,7 @@ public class CidadeDTO implements Serializable{
 
     private String nomePais;
     private String nomeEstado;
-    private String nome;
+    private String nomeCidade;
 
     public String getNomePais() {
         return nomePais;
@@ -27,11 +27,11 @@ public class CidadeDTO implements Serializable{
         this.nomeEstado = nomeEstado;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCidade() {
+        return nomeCidade;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCidade(String nomeCidade) {
+        this.nomeCidade = nomeCidade;
     }
 }

@@ -1,10 +1,13 @@
 package com.github.heliomfdev.restful_ws.controller;
 
 import com.github.heliomfdev.restful_ws.dto.EstadoDTO;
-import com.github.heliomfdev.restful_ws.model.Estado;
 import com.github.heliomfdev.restful_ws.service.EstadoService;
+import com.github.heliomfdev.restful_ws.util.CreateResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -13,29 +16,25 @@ import java.util.List;
 public class EstadoController {
 
     @Autowired
-    EstadoService service;
+    private EstadoService service;
 
     @RequestMapping
-    @ResponseBody
-    public List<EstadoDTO> obterTodosEstados() {
-        return service.obterTodos();
+    public ResponseEntity<List<EstadoDTO>> obterTodosEstados() {
+        return CreateResponseEntity.createFromListDTO(service.obterTodos());
     }
 
     @RequestMapping(value = "/sigla/{sigla}")
-    @ResponseBody
-    public EstadoDTO obterPorSigla(@PathVariable String sigla) {
-        return service.obterPorSigla(sigla);
+    public ResponseEntity<EstadoDTO> obterPorSigla(@PathVariable String sigla) {
+        return CreateResponseEntity.createFromDTO(service.obterPorSigla(sigla));
     }
 
     @RequestMapping(value = "/siglaPais/{sigla}")
-    @ResponseBody
-    public List<EstadoDTO> obterPorSiglaPais(@PathVariable String sigla) {
-        return service.obterPorSiglaPais(sigla);
+    public ResponseEntity<List<EstadoDTO>> obterPorSiglaPais(@PathVariable String sigla) {
+        return CreateResponseEntity.createFromListDTO(service.obterPorSiglaPais(sigla));
     }
 
     @RequestMapping(value = "/nome/{nome}")
-    @ResponseBody
-    public List<EstadoDTO> obterPorNome(@PathVariable String nome) {
-        return service.obterPorNome(nome);
+    public ResponseEntity<List<EstadoDTO>> obterPorNome(@PathVariable String nome) {
+        return CreateResponseEntity.createFromListDTO(service.obterPorNome(nome));
     }
 }
