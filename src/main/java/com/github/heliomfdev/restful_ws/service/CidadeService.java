@@ -1,28 +1,36 @@
 package com.github.heliomfdev.restful_ws.service;
 
-import com.github.heliomfdev.restful_ws.dto.CidadeDTO;
-import com.github.heliomfdev.restful_ws.model.Cidade;
-import com.github.heliomfdev.restful_ws.repository.CidadeRepository;
+import com.github.heliomfdev.restful_ws.dto.CityDTO;
+import com.github.heliomfdev.restful_ws.model.City;
+import com.github.heliomfdev.restful_ws.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Hélio Márcio Filho
+ * @see <a href="https://github.com/heliomf-dev">Visit my GitHub</a>
+ * @since 1.0
+ * @version 1.0
+ *
+ * City service to manage all the business logic of dealing with City entities.
+ * */
 @Service
-public class CidadeService extends GenericService<Cidade, CidadeDTO> {
+public class CidadeService extends GenericService<City, CityDTO> {
 
     @Autowired
-    private  CidadeRepository repository;
+    private CityRepository repository;
 
-    public List<CidadeDTO> obterPorSiglaEstado(String siglaEstado) {
-        return super.listMapper.map(repository.findByEstado_Sigla(siglaEstado.trim()), CidadeDTO.class);
+    public List<CityDTO> getByStateAbbreviation(String stateAbbreviation) {
+        return super.listMapper.map(repository.findByState_Abbreviation(stateAbbreviation.trim()), CityDTO.class);
     }
 
-    public List<CidadeDTO> obterPorNome(String nome) {
-        return super.listMapper.map(repository.findByNomeContaining(nome.trim()), CidadeDTO.class);
+    public List<CityDTO> getByName(String name) {
+        return super.listMapper.map(repository.findByNameContaining(name.trim()), CityDTO.class);
     }
 
-    public List<CidadeDTO> obterTodasCidades() {
-        return super.listMapper.map(repository.findAll(), CidadeDTO.class);
+    public List<CityDTO> getAll() {
+        return super.listMapper.map(repository.findAll(), CityDTO.class);
     }
 }

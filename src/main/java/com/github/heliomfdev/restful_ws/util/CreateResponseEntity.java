@@ -8,8 +8,21 @@ import org.springframework.http.ResponseEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Hélio Márcio Filho
+ * @see <a href="https://github.com/heliomf-dev">Visit my GitHub</a>
+ * @since 1.0
+ * @version 1.0
+ *
+ * Creates and returns {@link ResponseEntity} objects containing JSON as response.
+ * */
 public class CreateResponseEntity {
 
+    /**
+     * Creates a {@link ResponseEntity} containing a single JSON object as response.
+     *
+     * @param responseObject object that will be included in response.
+     * */
     @SuppressWarnings("unchecked")
     public static <T> ResponseEntity<T> createFromDTO(T responseObject) {
         ResponseEntity<T> responseEntity;
@@ -25,6 +38,11 @@ public class CreateResponseEntity {
         return responseEntity;
     }
 
+    /**
+     * Creates a {@link ResponseEntity} containing a list of JSON object as response.
+     *
+     * @param responseObject list of object that will be included in response.
+     * */
     @SuppressWarnings("unchecked")
     public static <T extends List<?>> ResponseEntity<T> createFromListDTO(T responseObject) {
         ResponseEntity<T> responseEntity;
