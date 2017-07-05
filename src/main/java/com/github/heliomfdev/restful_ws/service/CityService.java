@@ -6,6 +6,8 @@ import com.github.heliomfdev.restful_ws.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +19,8 @@ import java.util.List;
  * City service to manage all the business logic of dealing with City entities.
  * */
 @Service
-public class CidadeService extends GenericService<City, CityDTO> {
+@Transactional
+public class CityService extends GenericService<City, CityDTO> {
 
     @Autowired
     private CityRepository repository;

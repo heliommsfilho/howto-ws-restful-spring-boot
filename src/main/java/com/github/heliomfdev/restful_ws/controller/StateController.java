@@ -38,7 +38,7 @@ public class StateController {
     /**
      * Returns all States stored in database.
      * */
-    @RequestMapping(value = "/all", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/all", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<StateDTO>> getAll() {
         return CreateResponseEntity.createFromListDTO(service.getAll());
     }
@@ -48,7 +48,7 @@ public class StateController {
      *
      * @param name of the city
      * */
-    @RequestMapping(value = "/name/{name}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/name/{name}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<StateDTO>> getByName(@PathVariable String name) {
         return CreateResponseEntity.createFromListDTO(service.getByName(name));
     }
@@ -58,7 +58,7 @@ public class StateController {
      *
      * @param abbreviation of the State
      * */
-    @RequestMapping(value = "/abbreviation/{abbreviation}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/abbreviation/{abbreviation}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<StateDTO> getByStateAbbreviation(@PathVariable String abbreviation) {
         return CreateResponseEntity.createFromDTO(service.getByAbbreviation(abbreviation));
     }
@@ -68,7 +68,7 @@ public class StateController {
      *
      * @param countryAbbreviation abbreviation of the Country
      * */
-    @RequestMapping(value = "/country/{countryAbbreviation}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/country/{countryAbbreviation}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<StateDTO>> getByCountryAbbreviation(@PathVariable String countryAbbreviation) {
         return CreateResponseEntity.createFromListDTO(service.getByCountryAbbreviation(countryAbbreviation));
     }

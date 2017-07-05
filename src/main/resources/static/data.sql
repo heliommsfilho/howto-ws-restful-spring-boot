@@ -1,30 +1,30 @@
 DROP SCHEMA IF EXISTS cidades_brasil;
-DROP TABLE IF EXISTS country;
-DROP TABLE IF EXISTS state;
+DROP TABLE IF EXISTS pais;
+DROP TABLE IF EXISTS estado;
 DROP TABLE IF EXISTS cidade;
 
 CREATE SCHEMA cidades_brasil;
 
-CREATE TABLE cidades_brasil.country (
+CREATE TABLE cidades_brasil.pais (
   id int(11) NOT NULL AUTO_INCREMENT,
-  nomeCidade varchar(60) DEFAULT NULL,
-  abbreviation varchar(10) DEFAULT NULL,
+  nome varchar(60) DEFAULT NULL,
+  sigla varchar(10) DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
-INSERT INTO cidades_brasil.country (id, nomeCidade, abbreviation) VALUES (1, 'Brasil', 'BR');
+INSERT INTO cidades_brasil.pais (id, nome, sigla) VALUES (1, 'Brasil', 'BR');
 
-CREATE TABLE cidades_brasil.state (
+CREATE TABLE cidades_brasil.estado (
   id int(11) NOT NULL AUTO_INCREMENT,
-  nomeCidade varchar(75) DEFAULT NULL,
+  nome varchar(75) DEFAULT NULL,
   uf varchar(5) DEFAULT NULL,
-  country int(11) DEFAULT NULL,
+  pais int(11) DEFAULT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (country) REFERENCES cidades_brasil.country(id)
+  FOREIGN KEY (pais) REFERENCES cidades_brasil.pais(id)
 );
 
 
-INSERT INTO cidades_brasil.state (id, nomeCidade, uf, country) VALUES
+INSERT INTO cidades_brasil.estado (id, nome, uf, pais) VALUES
   (1, 'Acre', 'AC', 1),
   (2, 'Alagoas', 'AL', 1),
   (3, 'Amazonas', 'AM', 1),
@@ -55,13 +55,13 @@ INSERT INTO cidades_brasil.state (id, nomeCidade, uf, country) VALUES
 
 CREATE TABLE cidades_brasil.cidade (
   id int(11) NOT NULL AUTO_INCREMENT,
-  nomeCidade varchar(120) DEFAULT NULL,
-  state int(11) DEFAULT NULL,
+  nome varchar(120) DEFAULT NULL,
+  estado int(11) DEFAULT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (state) REFERENCES cidades_brasil.state(id)
+  FOREIGN KEY (estado) REFERENCES cidades_brasil.estado(id)
 );
 
-INSERT INTO cidades_brasil.cidade (id, nomeCidade, state) VALUES
+INSERT INTO cidades_brasil.cidade (id, nome, estado) VALUES
   (1, 'Afonso Cláudio', 8),
   (2, 'Água Doce do Norte', 8),
   (3, 'Águia Branca', 8),
@@ -2088,7 +2088,7 @@ INSERT INTO cidades_brasil.cidade (id, nomeCidade, state) VALUES
   (2024, 'Mariana', 11),
   (2025, 'Marilac', 11),
   (2026, 'Mário Campos', 11);
-INSERT INTO cidades_brasil.cidade (id, nomeCidade, state) VALUES
+INSERT INTO cidades_brasil.cidade (id, nome, estado) VALUES
   (2027, 'Maripá de Minas', 11),
   (2028, 'Marliéria', 11),
   (2029, 'Marmelópolis', 11),
@@ -3956,7 +3956,7 @@ INSERT INTO cidades_brasil.cidade (id, nomeCidade, state) VALUES
   (3891, 'Benjamin Constant do Sul', 23),
   (3892, 'Bento Gonçalves', 23),
   (3893, 'Boa Vista das Missões', 23);
-INSERT INTO cidades_brasil.cidade (id, nomeCidade, state) VALUES
+INSERT INTO cidades_brasil.cidade (id, nome, estado) VALUES
   (3894, 'Boa Vista do Buricá', 23),
   (3895, 'Boa Vista do Cadeado', 23),
   (3896, 'Boa Vista do Incra', 23),

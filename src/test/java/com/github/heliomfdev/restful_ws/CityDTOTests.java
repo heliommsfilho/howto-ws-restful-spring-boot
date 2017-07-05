@@ -77,6 +77,69 @@ public class CityDTOTests {
             Assert.assertEquals(city.getName(), cityDTO.getCityName());
             Assert.assertEquals(listCities.size(), QUANTIDADE_CIDADES_SAO_PAULO);
             Assert.assertEquals(listCities.size(), listCidadesDTO.size());
+
+            System.out.println(cityDTO.getCountryName());
+            System.out.println(cityDTO.getStateName());
+            System.out.println(cityDTO.getCityName());
+            System.out.printf("\n\n");
+        }
+
+        // de novo
+        listCidadesDTO = listMapper.map(listCities, CityDTO.class);
+        iteratorListCidades = listCities.iterator();
+        iteratorListCidadesDTO = listCidadesDTO.iterator();
+
+        while(iteratorListCidades.hasNext()) {
+            City city = iteratorListCidades.next();
+            CityDTO cityDTO = iteratorListCidadesDTO.next();
+
+            Assert.assertNotNull(city);
+            Assert.assertNotNull(cityDTO);
+            Assert.assertNotNull(city.getState().getCountry().getName());
+            Assert.assertNotNull(city.getState().getName());
+            Assert.assertNotNull(city.getName());
+            Assert.assertNotNull(cityDTO.getCountryName());
+            Assert.assertNotNull(cityDTO.getStateName());
+            Assert.assertNotNull(cityDTO.getCityName());
+            Assert.assertEquals(city.getState().getCountry().getName(), cityDTO.getCountryName());
+            Assert.assertEquals(city.getState().getName(), cityDTO.getStateName());
+            Assert.assertEquals(city.getName(), cityDTO.getCityName());
+            Assert.assertEquals(listCities.size(), QUANTIDADE_CIDADES_SAO_PAULO);
+            Assert.assertEquals(listCities.size(), listCidadesDTO.size());
+
+            System.out.println("Denovo" + cityDTO.getCountryName());
+            System.out.println("Denovo" + cityDTO.getStateName());
+            System.out.println("Denovo" + cityDTO.getCityName());
+            System.out.printf("\n\n");
+        }
+
+        // de novo
+        listCidadesDTO = listMapper.map(listCities, CityDTO.class);
+        iteratorListCidades = listCities.iterator();
+        iteratorListCidadesDTO = listCidadesDTO.iterator();
+
+        while(iteratorListCidades.hasNext()) {
+            City city = iteratorListCidades.next();
+            CityDTO cityDTO = iteratorListCidadesDTO.next();
+
+            Assert.assertNotNull(city);
+            Assert.assertNotNull(cityDTO);
+            Assert.assertNotNull(city.getState().getCountry().getName());
+            Assert.assertNotNull(city.getState().getName());
+            Assert.assertNotNull(city.getName());
+            Assert.assertNotNull(cityDTO.getCountryName());
+            Assert.assertNotNull(cityDTO.getStateName());
+            Assert.assertNotNull(cityDTO.getCityName());
+            Assert.assertEquals(city.getState().getCountry().getName(), cityDTO.getCountryName());
+            Assert.assertEquals(city.getState().getName(), cityDTO.getStateName());
+            Assert.assertEquals(city.getName(), cityDTO.getCityName());
+            Assert.assertEquals(listCities.size(), QUANTIDADE_CIDADES_SAO_PAULO);
+            Assert.assertEquals(listCities.size(), listCidadesDTO.size());
+
+            System.out.println("Denovo" + cityDTO.getCountryName());
+            System.out.println("Denovo" + cityDTO.getStateName());
+            System.out.println("Denovo" + cityDTO.getCityName());
+            System.out.printf("\n\n");
         }
     }
 }

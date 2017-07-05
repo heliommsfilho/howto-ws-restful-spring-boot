@@ -1,7 +1,7 @@
 package com.github.heliomfdev.restful_ws.controller;
 
 import com.github.heliomfdev.restful_ws.dto.CityDTO;
-import com.github.heliomfdev.restful_ws.service.CidadeService;
+import com.github.heliomfdev.restful_ws.service.CityService;
 import com.github.heliomfdev.restful_ws.util.CreateResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,14 +32,14 @@ import java.util.List;
 public class CityController {
 
     @Autowired
-    private CidadeService service;
+    private CityService service;
 
     /**
      * Returns all Cities stored in database.
      * */
-    @RequestMapping(value = "/all", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/all", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<CityDTO>> getAll() {
-        return CreateResponseEntity.createFromListDTO(service.getAll());
+         return CreateResponseEntity.createFromListDTO(service.getAll());
     }
 
     /**
@@ -47,7 +47,7 @@ public class CityController {
      *
      * @param name of the city
      * */
-    @RequestMapping(value = "name/{name}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "name/{name}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<CityDTO>> getByName(@PathVariable String name) {
         return CreateResponseEntity.createFromListDTO(service.getByName(name));
     }
@@ -57,7 +57,7 @@ public class CityController {
      *
      * @param abbreviation of the State
      * */
-    @RequestMapping(value = "/state/{abbreviation}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/state/{abbreviation}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<CityDTO>> getByState(@PathVariable String abbreviation) {
         return CreateResponseEntity.createFromListDTO(service.getByStateAbbreviation(abbreviation));
     }

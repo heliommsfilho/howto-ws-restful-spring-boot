@@ -1,7 +1,11 @@
 package com.github.heliomfdev.restful_ws.dto.mapper;
 
 import com.github.heliomfdev.restful_ws.dto.CityDTO;
+import com.github.heliomfdev.restful_ws.dto.CountryDTO;
+import com.github.heliomfdev.restful_ws.dto.StateDTO;
 import com.github.heliomfdev.restful_ws.model.City;
+import com.github.heliomfdev.restful_ws.model.Country;
+import com.github.heliomfdev.restful_ws.model.State;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 
@@ -34,6 +38,22 @@ public class Mapper {
     public static <S, D> D map(S source, Class<D> destinationType) {
 
         ModelMapper modelMapper = new ModelMapper();
+
+        /* Configuring explicit mapping for Country */
+        modelMapper.addMappings(new PropertyMap<Country, CountryDTO>() {
+            @Override
+            protected void configure() {
+                Integer numberOfStates = source.getStates().size();
+                map().setNumberOfStates(numberOfStates);
+            }});
+
+        /* Configuring explicit mapping for State */
+        modelMapper.addMappings(new PropertyMap<State, StateDTO>() {
+            @Override
+            protected void configure() {
+                Integer numberOfCities = source.getCities().size();
+                map().setNumberOfCities(numberOfCities);
+            }});
 
         /* Configuring explicit mapping for City */
         modelMapper.addMappings(new PropertyMap<City, CityDTO>() {

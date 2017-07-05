@@ -5,10 +5,7 @@ import com.github.heliomfdev.restful_ws.service.CountryService;
 import com.github.heliomfdev.restful_ws.util.CreateResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,18 +32,31 @@ public class CountryController {
     @Autowired
     private CountryService service;
 
-    @RequestMapping(value = "/all", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    /**
+     * Returns all Countries stored in database.
+     * */
+    @RequestMapping(value = "/all", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<CountryDTO>> getAll() {
         return CreateResponseEntity.createFromListDTO(service.getAll());
     }
 
-    @RequestMapping(value = "/abbreviation/{abbreviation}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    /**
+     * Returns Countries from a specific Country.
+     *
+     * @param abbreviation abbreviation of the Country
+     * */
+    @RequestMapping(value = "/abbreviation/{abbreviation}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<CountryDTO> getByAbbreviation(@PathVariable String abbreviation) {
         return CreateResponseEntity.createFromDTO(service.getByAbbreviation(abbreviation));
     }
 
-    @RequestMapping(value = "/name/{name}", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
-    public ResponseEntity<List<CountryDTO>> obterPorNome(@PathVariable String name) {
+    /**
+     * Returns Countries containing the provided name.
+     *
+     * @param name of the city
+     * */
+    @RequestMapping(value = "/name/{name}", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<CountryDTO>> getByName(@PathVariable String name) {
         return CreateResponseEntity.createFromListDTO(service.getByName(name));
     }
 }

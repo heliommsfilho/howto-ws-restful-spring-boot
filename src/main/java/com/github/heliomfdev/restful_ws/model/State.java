@@ -31,7 +31,7 @@ public class State implements Serializable {
     private List<City> cities;
 
     @ManyToOne
-    @JoinColumn(name = "country")
+    @JoinColumn(name = "pais")
     private Country country;
 
     public Long getId() {
