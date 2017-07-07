@@ -21,8 +21,24 @@ import java.lang.reflect.Type;
  * */
 public class Mapper {
 
+    private static ModelMapper modelMapper = getInstance();
+
     private Mapper() {
         /* Should not be instantiated */
+    }
+
+    /**
+     * Singleton to ensure a single instance of modelMapper.
+     * */
+    private static ModelMapper getInstance() {
+
+        if (modelMapper == null) {
+            modelMapper = new ModelMapper();
+            createAndSetPropertyMaps();
+            return modelMapper;
+        } else {
+            return modelMapper;
+        }
     }
 
     /**
@@ -37,32 +53,41 @@ public class Mapper {
     @SuppressWarnings("unchecked")
     public static <S, D> D map(S source, Class<D> destinationType) {
 
-        ModelMapper modelMapper = new ModelMapper();
+        return source != null ? modelMapper.map(source, destinationType) : null;
+    }
 
-        /* Configuring explicit mapping for Country */
-        modelMapper.addMappings(new PropertyMap<Country, CountryDTO>() {
+    /**
+     * This static method sets all custom explicit mappings into {@link ModelMapper} attribute.
+     * <i>Created due a issue caused by excessive addMappings() calls, which were resulting in NullPointerException.</i>
+     * */
+    private static void createAndSetPropertyMaps() {
+
+        PropertyMap<Country, CountryDTO> propertyMapCountry = new PropertyMap<Country, CountryDTO>() {
             @Override
             protected void configure() {
                 Integer numberOfStates = source.getStates().size();
                 map().setNumberOfStates(numberOfStates);
-            }});
+            }
+        };
 
-        /* Configuring explicit mapping for State */
-        modelMapper.addMappings(new PropertyMap<State, StateDTO>() {
+        PropertyMap<State, StateDTO> propertyMapState = new PropertyMap<State, StateDTO>() {
             @Override
             protected void configure() {
                 Integer numberOfCities = source.getCities().size();
                 map().setNumberOfCities(numberOfCities);
-            }});
+            }
+        };
 
-        /* Configuring explicit mapping for City */
-        modelMapper.addMappings(new PropertyMap<City, CityDTO>() {
+        PropertyMap<City, CityDTO> propertyMapCity = new PropertyMap<City, CityDTO>() {
             @Override
             protected void configure() {
                 String countryName = source.getState().getCountry().getName();
                 map().setCountryName(countryName);
-            }});
+            }
+        };
 
-        return source != null ? modelMapper.map(source, destinationType) : null;
+        modelMapper.addMappings(propertyMapCountry);
+        modelMapper.addMappings(propertyMapState);
+        modelMapper.addMappings(propertyMapCity);
     }
 }
