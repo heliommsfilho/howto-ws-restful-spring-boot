@@ -47,7 +47,7 @@ public class CreateResponseEntity {
     public static <T extends List<?>> ResponseEntity<T> createFromListDTO(T responseObject) {
         ResponseEntity<T> responseEntity;
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json");
+        headers.add("Content-Type", "application/json; charset=utf-8");
 
         if ((responseObject != null) && (responseObject.size() != 0)) {
             responseEntity = new ResponseEntity<>(responseObject, headers, HttpStatus.OK);
