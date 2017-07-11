@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="spring-boot-restful-web-service:war exploded">
-    <output-path>$PROJECT_DIR$/target/spring_rest_server</output-path>
+    <output-path>$PROJECT_DIR$/target/ws_cities_1.0</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -64,7 +64,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/spring_rest_server/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/ws_cities_1.0/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="spring-boot-restful-web-service/web/Web" />
     </root>
