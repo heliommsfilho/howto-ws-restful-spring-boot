@@ -53,7 +53,7 @@ public class CountryController {
     /**
      * Returns Countries containing the provided name.
      *
-     * @param name of the city
+     * @param name of the country
      * */
     @RequestMapping(value = "/name/{name}", produces = "application/json", method = RequestMethod.GET)
     public ResponseEntity<List<CountryDTO>> getByName(@PathVariable String name) {
