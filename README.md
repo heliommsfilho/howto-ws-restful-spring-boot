@@ -1,3 +1,5 @@
+![Spring Framework](https://raw.githubusercontent.com/heliomf-dev/howto-ws-restful-spring-boot/master/howto-ws-spring.png)
+
 [Read in English](https://github.com/heliomf-dev/howto-ws-restful-spring-boot#english-how-to-restful-web-service-with-spring-boot) ou [leia em Português](https://github.com/heliomf-dev/howto-ws-restful-spring-boot#portuguese-how-to-restful-web-service-com-spring-boot)
 
 # [English] How To: RESTful Web Service with Spring Boot:
