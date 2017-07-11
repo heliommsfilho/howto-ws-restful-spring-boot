@@ -5,7 +5,7 @@
 
 	<groupId>com.github.heliomf-dev</groupId>
 	<artifactId>spring-boot-restful-web-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<name>spring-boot-restful-web-service</name>
@@ -58,7 +58,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring_rest_server</finalName>
+		<finalName>ws_cities_${version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
