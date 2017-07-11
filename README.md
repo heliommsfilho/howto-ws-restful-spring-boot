@@ -123,7 +123,7 @@ O projeto consiste em um *Web Service* criado com *Spring Boot* capaz de recuper
 
 ### Instruções:
 
-1. Iniciar o servidor do *H2 Database* com o comando: `java -jar h2-xxx.jar`
+1. Iniciar o servidor do *H2 Database* com o comando: `java -jar h2-{sua-versao}.jar`
 2. Realizar o *deploy* da aplicação no servidor Tomcat 8 (ou superior) executando sobre Java 8 (ou superior)
 
 ### Serviços disponíveis:
